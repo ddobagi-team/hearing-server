@@ -1,0 +1,25 @@
+spring:
+  config:
+    import: classpath:/env.yml
+  datasource:
+    url: ${gaori.mysql.host}
+    username: ${gaori.mysql.username}
+    password: ${gaori.mysql.password}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  main:
+    allow-bean-definition-overriding: true
+
+logging:
+  level:
+    org.hibernate.type: trace
